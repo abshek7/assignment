@@ -37,6 +37,10 @@ exports.getBooks = async (req, res) => {
     const books = await Book.find().skip(skip).limit(limit);
     const totalBooks = await Book.countDocuments();
 
+    if (books.length === 0) {
+      return res.status(404).json({ message: "No books found" });
+    }
+
     res.status(200).json({
       books,
       currentPage: page,
@@ -44,9 +48,11 @@ exports.getBooks = async (req, res) => {
       totalBooks,
     });
   } catch (err) {
-    res.status(500).json({ message: err.message });
+    console.error("Error fetching books:", err);
+    res.status(500).json({ message: "Internal Server Error" });
   }
 };
+
 
 // Get a single book by ID
 exports.getBookById = async (req, res) => {
