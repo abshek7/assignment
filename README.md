@@ -2,17 +2,7 @@
 
 A full-stack web application for managing books, providing CRUD operations using the MERN stack (MongoDB, Express.js, React, Node.js) and modern development practices.
 
-## Key Features
 
-*   **CRUD Operations:** Create, Read, Update, and Delete books effortlessly.
-*   **Pagination:** Efficiently browse through books with pagination support.
-*   **Validation:** Robust form validation using Joi.
-*   **Modern UI:** Sleek and responsive UI components powered by shadcn/ui.
-*   **Notifications:** User-friendly toast notifications for real-time feedback.
-*   **MongoDB Integration:** Seamless data storage and retrieval.
-*   **Testing:** Comprehensive testing suite with Jest.
-
-## Prerequisites
 
 Ensure you have the following installed:
 
