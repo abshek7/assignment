@@ -23,8 +23,6 @@ app.use(
   })
 );
 
-app.options("*", cors());
-
 // **Base Route**
 app.get("/", (req, res) => {
   res.json({ message: "Backend is running successfully!" });

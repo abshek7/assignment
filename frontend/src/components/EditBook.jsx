@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import { useParams, useNavigate } from "react-router-dom"
 import { useForm } from "react-hook-form"
@@ -35,7 +33,7 @@ const EditBook = () => {
   useEffect(() => {
     const fetchBook = async () => {
       try {
-        const response = await fetch(`${import.meta.env.VITE_REACT_APP_API_URL}/books/${id}`);
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/books/${id}`);
         if (!response.ok) {
           throw new Error("Failed to fetch book");
         }
@@ -80,7 +78,7 @@ const EditBook = () => {
         return;
       }
   
-      const response = await fetch(`${import.meta.env.VITE_REACT_APP_API_URL}/books/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/books/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
