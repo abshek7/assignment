@@ -10,11 +10,8 @@
       {
         "src": "/api/(.*)",
         "dest": "backend/api/server.js"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "frontend/index.html"
       }
-    ]
+    ],
+    "ignoreFiles": ["backend/tests/*"]
   }
   
