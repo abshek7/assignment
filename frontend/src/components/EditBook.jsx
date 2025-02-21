@@ -35,7 +35,7 @@ const EditBook = () => {
   useEffect(() => {
     const fetchBook = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/books/${id}`);
+        const response = await fetch(`${import.meta.env.VITE_REACT_APP_API_URL}/books/${id}`);
         if (!response.ok) {
           throw new Error("Failed to fetch book");
         }
