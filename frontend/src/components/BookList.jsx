@@ -24,7 +24,7 @@ const BookList = () => {
     const controller = new AbortController();
     const fetchBooks = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/api/books?page=${currentPage}&limit=${booksPerPage}`, {
+        const response = await fetch(`${import.meta.env.VITE_REACT_APP_API_URL}/books?page=${currentPage}&limit=${booksPerPage}`, {
           signal: controller.signal,
         });
 
@@ -84,7 +84,7 @@ const BookList = () => {
         return;
       }
   
-      const response = await fetch(`http://localhost:5000/api/books/${editBookId}`, {
+      const response = await fetch(`${import.meta.env.VITE_REACT_APP_API_URL}/books/${editBookId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(updateData),
@@ -110,7 +110,7 @@ const BookList = () => {
     if (!window.confirm("Are you sure you want to delete this book?")) return;
 
     try {
-      const response = await fetch(`http://localhost:5000/api/books/${bookId}`, {
+      const response = await fetch(`${import.meta.env.VITE_REACT_APP_API_URL}/books/${bookId}`, {
         method: "DELETE",
       });
 

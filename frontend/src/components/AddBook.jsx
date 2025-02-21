@@ -29,7 +29,7 @@ const AddBook = () => {
 
   const onSubmit = async (values) => {
     try {
-      const response = await fetch("http://localhost:5000/api/books", {
+      const response = await fetch(`${import.meta.env.VITE_REACT_APP_API_URL}/books`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
