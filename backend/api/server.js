@@ -27,7 +27,7 @@ app.use(
 app.options("*", cors());
 
 // Routes
-app.use("/api", bookRoutes);
+app.use("/api/books", bookRoutes);
 
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
