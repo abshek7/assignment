@@ -20,24 +20,25 @@ const BookList = () => {
 
   useEffect(() => {
     const controller = new AbortController();
-
+  
     const fetchBooks = async () => {
       try {
         const response = await fetch(
           `${import.meta.env.VITE_API_URL}/books?page=${currentPage}&limit=${booksPerPage}`,
           { signal: controller.signal }
         );
-
+  
         if (!response.ok) {
           throw new Error(`HTTP error! Status: ${response.status}`);
         }
-
+  
         const data = await response.json();
-
+        console.log("Fetched Data:", data); // DEBUG LOG
+  
         if (!data.books || !Array.isArray(data.books) || typeof data.totalPages !== "number") {
           throw new Error("Invalid API response format");
         }
-
+  
         setBooks(data.books);
         setTotalPages(data.totalPages);
       } catch (error) {
@@ -51,10 +52,11 @@ const BookList = () => {
         }
       }
     };
-
+  
     fetchBooks();
     return () => controller.abort();
   }, [currentPage, toast]);
+  
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
 
