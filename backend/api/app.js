@@ -16,11 +16,11 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(
   cors({
-    origin: "https://assignment-seven-kappa-14.vercel.app/",
+    origin: "https://assignment-seven-kappa-14.vercel.app",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     allowedHeaders: ["Content-Type", "Authorization"], // Ensure headers are allowed
-    
+
   })
 );
 
