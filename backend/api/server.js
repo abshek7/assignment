@@ -19,18 +19,21 @@ app.use(
     origin: "https://assignment-seven-kappa-14.vercel.app",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"], // Ensure headers are allowed
-
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
 app.options("*", cors());
 
-// Routes
+// **Base Route**
+app.get("/", (req, res) => {
+  res.json({ message: "Backend is running successfully!" });
+});
+
+// **API Routes**
 app.use("/api/books", bookRoutes);
 
+// Start Server
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
-
-
 
 module.exports = app; // Export app (Jest needs this)
