@@ -19,6 +19,8 @@ app.use(
     origin: "https://assignment-seven-kappa-14.vercel.app/",
     credentials: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"], // Ensure headers are allowed
+    
   })
 );
 
