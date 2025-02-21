@@ -8,7 +8,7 @@ A full-stack web application for managing books, providing CRUD operations using
 *   **Pagination:** Efficiently browse through books with pagination support.
 *   **Validation:** Robust form validation using Joi.
 *   **Modern UI:** Sleek and responsive UI components powered by shadcn/ui.
-*   **Notifications:** User-friendly toast notifications for real-time feedback. 
+*   **Notifications:** User-friendly toast notifications for real-time feedback.
 *   **MongoDB Integration:** Seamless data storage and retrieval.
 *   **Testing:** Comprehensive testing suite with Jest.
 
@@ -173,6 +173,56 @@ The application implements comprehensive error handling:
 *   Frontend form validation using Zod
 *   Toast notifications for user feedback
 *   HTTP error handling with appropriate status codes
+
+## Postman and cURL Examples
+
+### Create a new book
+
+**cURL:**
+
+```bash
+curl -X POST -H "Content-Type: application/json" -d '{
+  "title": "The Lord of the Rings",
+  "author": "J.R.R. Tolkien",
+  "genre": "Fantasy",
+  "publicationYear": 1954
+}' http://localhost:5000/api/books
+```
+
+### Get book by ID
+
+**cURL:**
+
+```bash
+curl http://localhost:5000/api/books/{bookId}
+```
+
+Replace `{bookId}` with the actual ID of the book.
+
+### Update book by ID
+
+**cURL:**
+
+```bash
+curl -X PUT -H "Content-Type: application/json" -d '{
+  "title": "The Hobbit",
+  "author": "J.R.R. Tolkien",
+  "genre": "Fantasy",
+  "publicationYear": 1937
+}' http://localhost:5000/api/books/{bookId}
+```
+
+Replace `{bookId}` with the actual ID of the book.
+
+### Delete book by ID
+
+**cURL:**
+
+```bash
+curl -X DELETE http://localhost:5000/api/books/{bookId}
+```
+
+Replace `{bookId}` with the actual ID of the book.
 
 ## Postman Tests
 
